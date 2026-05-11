@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Makeup World</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{
+  background:linear-gradient(135deg,#1f1c2c,#928dab);
+  color:white;
+  min-height:100vh;
+}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:rgba(0,0,0,0.3);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+}
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#ff7eb3;
+}
+nav button{
+  margin:0 10px;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#ff7eb3;
+  color:black;
+  font-weight:bold;
+  transition:0.3s;
+}
+nav button:hover{transform:scale(1.05);background:#ff4f9a;}
+.page{display:none;padding:60px;min-height:80vh;}
+.active{display:block;}
+.hero{text-align:center;padding-top:80px;}
+.hero h1{font-size:50px;margin-bottom:20px;}
+.hero p{color:#f1f1f1;max-width:600px;margin:auto;}
+.btn{margin-top:20px;padding:12px 20px;border:none;background:#ff7eb3;color:black;font-weight:bold;border-radius:10px;cursor:pointer;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
+.card{background:rgba(255,255,255,0.1);padding:20px;border-radius:12px;text-align:center;transition:0.3s;}
+.card:hover{transform:translateY(-10px);}
+.card img{width:100%;border-radius:10px;margin-top:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💄 Makeup World</div>
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('makeup')">Makeup</button>
+    <button onclick="showPage('products')">Products</button>
+    <button onclick="showPage('tips')">Tips</button>
+  </nav>
+</header>
+
+<section id="home" class="page active">
+  <div class="hero">
+    <h1>Welcome to Beauty World 💖</h1>
+    <p>Discover modern makeup trends, beauty tips, and amazing cosmetic products.</p>
+    <button class="btn" onclick="showPage('makeup')">Explore Makeup</button>
+  </div>
+</section>
+
+<section id="makeup" class="page">
+  <h2>Makeup Styles 💄</h2>
+  <div class="grid">
+    <div class="card">
+      Natural Look
+      <img src="naturel.jpg" />
+    </div>
+    <div class="card">
+      Skin Care Glow ✨
+      <img src="skin.jpg" />
+    </div>
+    <div class="card">
+      Smokey Party Look 🔥
+      <img src="smok.jpg" />
+    </div>
+  </div>
+</section>
+
+<section id="products" class="page">
+  <h2>Beauty Products 🧴</h2>
+  <div class="grid">
+    <div class="card">
+      Lipstick
+      <img src="lipstick.jpg" />
+    </div>
+    <div class="card">
+      Foundation
+      <img src="foundation.jpg" />
+    </div>
+    <div class="card">
+      Eyeshadow
+      <img src="eyesh.jpg" />
+    </div>
+  </div>
+</section>
+
+<section id="tips" class="page">
+  <h2>Beauty Tips ✨</h2>
+  <p>- Always clean your skin before makeup</p>
+  <p>- Use primer for long lasting effect</p>
+  <p>- Match foundation with your skin tone</p>
+  <p>- Remove makeup before sleeping</p>
+</section>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
